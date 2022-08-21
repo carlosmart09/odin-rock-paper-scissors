@@ -35,22 +35,40 @@ function playRound(playerSelection, computerSelection) {
     }
    }
 
-// const playerSelection = prompt("Type your choice");
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection, computerSelection));
+function game() {
+    let win = 0;
+    let lose = 0;
+    let tie = 0;
 
-
-
-function game(playRound) {
     for (let i = 0; i < 5; i++) {
-            if (playRound(playerSelection, computerSelection).slice(0, 8) === "You Win!") {
-            console.log("Winner!");
-        } else if (playRound(playerSelection, computerSelection).slice(0, 9) === "You Lose!") {
-                console.log("Looser!");
-            } else {
-                console.log("Tie");
-            }
-        }
+        const playerSelection = prompt("Type your choice")
+        getComputerChoice();
+        const computerSelection = getComputerChoice();
+        alert("Computer got " + computerSelection)
+        console.log(playRound(playerSelection, computerSelection));
+
+        if (playRound(playerSelection, computerSelection)[4] === "W") {
+            win += 1; 
+         } else if (playRound(playerSelection, computerSelection)[4] === "L") {
+            lose += 1;
+         } else {
+            tie += 1;
+         }
      }
 
-     console.log(game(playRound))
+     if (win > lose) {
+        console.log("You have won the match!!");
+        alert("You have won the match!!")
+     } else if (lose > win) {
+        console.log("Too bad! You have lost the match");
+        alert("Too bad! You have lost the match")
+     }
+        else {
+            console.log("You have tied the match!")
+            alert("You have tied the match!")
+    }
+}
+     
+ 
+  
+game();
