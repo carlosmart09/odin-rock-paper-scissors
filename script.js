@@ -35,21 +35,25 @@ function playRound(playerSelection, computerSelection) {
     }
    }
 
-function game() {
-    let win = 0;
-    let lose = 0;
-    let tie = 0;
+   let win = 0;
+   let lose = 0;
+   let tie = 0;
+   
+
+
+   function game() {
+    
 
     for (let i = 0; i < 5; i++) {
         const playerSelection = prompt("Type your choice")
-        getComputerChoice();
         const computerSelection = getComputerChoice();
+        const round = playRound(playerSelection, computerSelection)
         alert("Computer got " + computerSelection)
-        console.log(playRound(playerSelection, computerSelection));
+        console.log(round);
 
-        if (playRound(playerSelection, computerSelection)[4] === "W") {
+        if (round[4] === "W") {
             win += 1; 
-         } else if (playRound(playerSelection, computerSelection)[4] === "L") {
+         } else if (round[4] === "L") {
             lose += 1;
          } else {
             tie += 1;
