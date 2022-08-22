@@ -10,39 +10,34 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === "rock" && computerSelection === "scissors") {
      return "You Win! Rock beats Scissors"
     }
-    if (playerSelection ==="rock" && computerSelection === "rock") {
-     return "Its a tie! Both got Rock"
-    }
- 
+     
     if (playerSelection === "paper" && computerSelection === "scissors") {
      return "You Lose! Scissors beats Paper"
     }
     if (playerSelection === "paper" && computerSelection === "rock") {
      return "You Win! Paper beats Rock"
     }
-    if (playerSelection ==="paper" && computerSelection === "paper") {
-     return "Its a tie! Both got Paper"
-    }
- 
+    
     if (playerSelection === "scissors" && computerSelection === "rock") {
      return "You Lose! Rock beats Scissors"
     }
     if (playerSelection === "scissors" && computerSelection === "paper") {
      return "You Win! Scissors beats Paper"
     }
-    if (playerSelection ==="scissors" && computerSelection === "scissors") {
-     return "Its a tie! Both got Scissors"
+    
+    if (playerSelection === computerSelection) {
+      return "It's a tie! Both got " + playerSelection;
     }
    }
 
-   let win = 0;
-   let lose = 0;
-   let tie = 0;
+   
    
 
 
    function game() {
-    
+      let win = 0;
+      let lose = 0;
+      let tie = 0;
 
     for (let i = 0; i < 5; i++) {
         const playerSelection = prompt("Type your choice")
